@@ -159,7 +159,7 @@ enum custom_keycodes {
 };
 
 enum layers {
-    BASE,
+    QWERTY,
     GAMING, 
     SYMBOLS,
     MEDIA,
@@ -169,10 +169,10 @@ enum layers {
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [BASE] = LAYOUT_moonlander(
-    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PGUP,                                        TG(1),          KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
-    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_PGDOWN,                                      TG(2),          KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_EQUAL,       
-    KC_BSPACE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           TG(4),                                          TG(3),          KC_H,           KC_J,           KC_K,           KC_L,           LT(2,KC_SCOLON),LGUI_T(KC_QUOTE),
+  [QWERTY] = LAYOUT_moonlander(
+    KC_ESCAPE,      KC_1,           KC_2,           KC_3,           KC_4,           KC_5,           KC_PGUP,                                        TG(GAMING),     KC_6,           KC_7,           KC_8,           KC_9,           KC_0,           KC_MINUS,       
+    KC_TAB,         KC_Q,           KC_W,           KC_E,           KC_R,           KC_T,           KC_PGDOWN,                                      TG(SYMBOLS),    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_EQUAL,       
+    KC_BSPACE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           TG(JBOSUhA),                                    TG(MEDIA),      KC_H,           KC_J,           KC_K,           KC_L,           LT(2,KC_SCOLON),LGUI_T(KC_QUOTE),
     KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         RCTL_T(KC_SLASH),KC_RSHIFT,      
     KC_LCTRL,       KC_LGUI,        KC_LALT,        KC_LEFT,        KC_RIGHT,                       KC_DELETE,                                      KC_BSPACE,                      KC_UP,          KC_DOWN,        KC_LBRACKET,    KC_RBRACKET,    KC_GRAVE,       
                                                                     KC_SPACE,       KC_LSHIFT,      KC_COLN,                                        KC_TAB,         KC_RSHIFT,      KC_ENTER
@@ -203,24 +203,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ),
   [JBOSUhA] = LAYOUT_moonlander(
     KC_TAB,         JBO_PA,         JBO_RE,         JBO_CI,         JBO_VO,         JBO_MU,         JBO_GAhU,                                       KC_NO,          JBO_XA,         JBO_ZE,         JBO_BI,         JBO_SO,         JBO_NO,         JBO_ZIhO,    
-    JBO_LE,         JBO_LO,         JBO_LA,         KC_NO,          KC_NO,          KC_NO,          JBO_NIhA,                                       TO(6),          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_MINUS,       
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                          KC_NO,          KC_QUOTE,       KC_NO,          KC_NO,          KC_NO,          JBO_LOhU,       JBO_LU,    
-    KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,                                                                          KC_NO,          KC_NO,          KC_COMMA,       KC_DOT,         JBO_ZOI,        KC_NO,          
-    JBO_PU,         JBO_CA,         JBO_BA,         JBO_ZUhA,       JBO_RIhU,                       OSL(5),                                         KC_NO,                          JBO_CAhU,       JBO_TIhA,       JBO_VEI,        JBO_VEhO,       JBO_ZO,    
-                                                                    KC_NO,          JBO_NU,         JBO_XU,                                         JBO_I,          JBO_NOI,        KC_TRANSPARENT
+    JBO_LE,         JBO_LO,         JBO_LA,         KC_E,           KC_R,           KC_T,           JBO_NIhA,                                       TO(CNIMAhO),    KC_Y,           KC_U,           KC_I,           KC_O,           KC_P,           KC_MINUS,       
+    KC_BSPACE,      KC_A,           KC_S,           KC_D,           KC_F,           KC_G,           KC_NO,                                          TO(JBOGAhI),    KC_QUOTE,       KC_J,           KC_K,           KC_L,           JBO_LOhU,       JBO_LU,    
+    KC_LSHIFT,      KC_Z,           KC_X,           KC_C,           KC_V,           KC_B,                                                                           KC_N,           KC_M,           KC_COMMA,       KC_DOT,         JBO_ZOI,        JBO_LOhU,          
+    JBO_PU,         JBO_CA,         JBO_BA,         JBO_ZUhA,       JBO_RIhU,                       KC_DELETE,                                      KC_BSPACE,                      JBO_CAhU,       JBO_TIhA,       JBO_VEI,        JBO_VEhO,       JBO_ZO,    
+                                                                    KC_NO,          JBO_NU,         JBO_XU,                                         JBO_I,          JBO_NOI,        KC_ENTER
   ),
   [JBOGAhI] = LAYOUT_moonlander(
     JBO_FOh,        JBO_KOhA,       JBO_KOhE,       JBO_KOhI,       JBO_KOhO,       JBO_KOhU,       JBO_GOI,                                        JBO_CEI,        JBO_BRODA,      JBO_BRODE,      JBO_BRODI,      JBO_BRODO,      JBO_BRODU,      KC_NO,          
-    KC_NO,          JBO_LAhE,       JBO_LEhE,       KC_NO,          JBO_LOhE,       JBO_LUhE,       JBO_CU,                                         TO(6),          JBO_FA,         JBO_FE,         JBO_FI,         JBO_FO,         JBO_FU,         KC_NO,          
-    KC_NO,          JBO_LA,         JBO_LE,         JBO_LI,         JBO_LO,         JBO_LU,         JBO_KU,                                         KC_NO,          JBO_JAI,        JBO_SE,         JBO_TE,         JBO_VE,         JBO_XE,         JBO_LIhU,    
-    KC_NO,          JBO_LAhI,       JBO_LEhI,       KC_NO,          JBO_LOhI,       JBO_LUhI,                                                                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          JBO_LEhU,          
-    KC_NO,          JBO_LAI,        JBO_LEI,        KC_NO,          JBO_LOI,                        KC_NO,                                          JBO_KUhO,                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
+    KC_TAB,         JBO_LAhE,       JBO_LEhE,       KC_NO,          JBO_LOhE,       JBO_LUhE,       JBO_CU,                                         TO(CNIMAhO),    JBO_FA,         JBO_FE,         JBO_FI,         JBO_FO,         JBO_FU,         KC_NO,          
+    KC_BSPACE,      JBO_LA,         JBO_LE,         JBO_LI,         JBO_LO,         JBO_LU,         JBO_KU,                                         TO(JBOSUhA),    JBO_JAI,        JBO_SE,         JBO_TE,         JBO_VE,         JBO_XE,         JBO_LIhU,    
+    KC_LSHIFT,      JBO_LAhI,       JBO_LEhI,       KC_NO,          JBO_LOhI,       JBO_LUhI,                                                                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          JBO_LEhU,          
+    KC_LCTRL,       JBO_LAI,        JBO_LEI,        KC_NO,          JBO_LOI,                        KC_DELETE,                                      JBO_KUhO,                       KC_NO,          KC_NO,          KC_NO,          KC_NO,          KC_NO,          
                                                                     JBO_KEI,        JBO_DUhU,       JBO_KA,                                         JBO_KUhO,       JBO_NOI,        JBO_POI
   ),
   [CNIMAhO] = LAYOUT_moonlander(
     JBO_AhA,        JBO_EhA,        JBO_IhA,        JBO_OhA,        JBO_UhA,        JBO_ROhA,       JBO_ROhU,                                       KC_NO,          KC_NO,          JBO_UA,         KC_NO,          JBO_IA,         KC_NO,          KC_NO,          
-    JBO_AhE,        JBO_EhE,        JBO_IhE,        JBO_OhE,        JBO_UhE,        JBO_ROhE,       JBO_REhE,                                       TO(4),          KC_NO,          JBO_UE,         KC_SPACE,       JBO_IE,         KC_BSPACE,      KC_NO,          
-    JBO_AhI,        JBO_EhI,        JBO_IhI,        JBO_OhI,        JBO_UhI,        JBO_ROhI,       KC_NO,                                          KC_NO,          KC_NO,          JBO_UI,         JBO_OI,         JBO_II,         JBO_EI,         JBO_AI,   
+    JBO_AhE,        JBO_EhE,        JBO_IhE,        JBO_OhE,        JBO_UhE,        JBO_ROhE,       JBO_REhE,                                       TO(JBOGAhI),    KC_NO,          JBO_UE,         KC_SPACE,       JBO_IE,         KC_BSPACE,      KC_NO,          
+    JBO_AhI,        JBO_EhI,        JBO_IhI,        JBO_OhI,        JBO_UhI,        JBO_ROhI,       KC_NO,                                          TO(JBOSUhA),    KC_NO,          JBO_UI,         JBO_OI,         JBO_II,         JBO_EI,         JBO_AI,   
     JBO_AhO,        JBO_EhO,        JBO_IhO,        JBO_OhO,        JBO_UhO,        JBO_ROhO,                                                                       KC_NO,          JBO_UO,         KC_DOT,         JBO_IO,         JBO_PEI,        KC_NO,          
     JBO_AhU,        JBO_EhU,        JBO_IhU,        JBO_OhU,        JBO_UhU,                        JBO_NAI,                                        JBO_CUhI,                       JBO_UU,         KC_NO,          JBO_IU,         KC_NO,          JBO_AU,   
                                                                     JBO_NAICAI,     JBO_NAISAI,     JBO_NAIRUhE,                                    JBO_RUhE,       JBO_SAI,        JBO_CAI
